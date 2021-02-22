@@ -6,6 +6,7 @@ const TableHeader = () => {
         <tr>
           <th>Name</th>
           <th>Job</th>
+          <th>Action</th>
         </tr>
       </thead>
     )
@@ -26,24 +27,15 @@ const TableBody = (props) => {
         <tbody>{rows}</tbody>
     )
 }
-// class Table extends Component {
-//     render() {
-//         const {characterData} = this.props
-//         return (
-//           <table>
-//               <TableHeader />
-//               <TableBody characterData = {characterData} />
-//           </table>
-//         );
-//     }
-// }
-const Table = (props) => {
-    const {characterData, removeCharacter} = props;
-    return (
-      <table>
-        <TableHeader />
-        <TableBody characterData={characterData} removeCharacter={removeCharacter} />
-      </table>
-    );
+class Table extends Component {
+    render() {
+        const {characterData, removeCharacter} = this.props;
+        return (
+            <table>
+            <TableHeader />
+            <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+          </table>
+        );
+    }
 }
 export default Table
